@@ -5,7 +5,7 @@ Guideline Tetris AI that uses a greedy BFS search to look through potential boar
 
 Example of a g++ compiler statement:  g++ main.cpp TetrisBoard.cpp Move.cpp SRSPathfinder.cpp AI.cpp -o main
 
-To run, example: ./main 200 1
+To run, for example: ./main 200 1
 
 The first command line input is the number of piece placements to simulate (200), and the second (0 or 1) is to print out the boards between each placement.
 
