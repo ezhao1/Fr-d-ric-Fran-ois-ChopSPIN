@@ -1,6 +1,14 @@
 # Frédéric François ChopSPIN
 Guideline Tetris AI that uses a greedy BFS search to look through potential boards across 5 previews and select the best move. The Tetris board is implemented through a partial bitboard implementation, and a heuristic function measuring six features (lines sent, lines cleared, holes, bumpiness, wells, and stack height) is used to evaluate boards.
 
+# Compile and Run
+
+Example of a g++ compiler statement:  g++ main.cpp TetrisBoard.cpp Move.cpp SRSPathfinder.cpp AI.cpp -o main
+
+To run, example: ./main 200 1
+
+The first command line input is the number of piece placements to simulate (200), and the second (0 or 1) is to print out the boards between each placement.
+
 # SRS Pathfinder
 
 To find all possible placements with a certain piece on the board, I need to do a breadth first search of sorts. Just finding every possible orientation of the piece within the space and then lowering it onto the board wont get me every placement, because with SRS, you can do tucks and spins that can give placements that won’t be detected with that method. Thus, I first build an SRS pathfinder, using the kick tables provided by guideline, to start at the root node and expand with every possible movement type - left move, right move, softdrop, rotate left, and rotate right. This repeats, until I eventually find every possible move with that piece on the board.
