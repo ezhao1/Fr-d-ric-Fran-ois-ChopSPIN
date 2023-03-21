@@ -15,7 +15,7 @@ To find all possible placements with a certain piece on the board, I need to do 
 
 # AI
 
-In order to determine which of these possible placements on the board is the best to do for the best scoring, I need to do a search across the game tree. However, just directly doing a breadth first search across the state space, as mentioned earlier, is very costly. With 6 consecutive different pieces and about 35 different possible placements per piece per board, there are about 1.838 billion sequences to search through, which would take far too long to do.
+In order to determine which of these possible placements on the board is the best to do for the best scoring, I need to do a search across the game tree. However, just directly doing a breadth first search across the state space, as mentioned earlier, is very costly. With 6 consecutive different pieces, a hold piece, and about 35 different possible placements per piece per board, there are about 64 billion sequences to search through, which would take far too long to do.
 
 This, I implement a greedy element to my BFS: on each level, I only select a certain number of the best moves (currently set to 15) according to some kind of evaluation of the board, and then expand those boards. At the end, I select the move that brings me the best end evaluation board.
 
